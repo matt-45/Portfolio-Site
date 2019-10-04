@@ -22,15 +22,14 @@
         let mainString = ""
         let num1 = $("#num1FizInput").val()
         let num2 = $("#num2FizInput").val()
-        console.log(num1)
-        console.log(num2)
+
         for (var i = 1; i < 100; i++) {
             if (i % num1 == 0 && i % num2 == 0) {
-                mainString += "FIZ BUZ ".bold()
+                mainString += "FIZ BUZ "
             } else if (i % num1 == 0) {
-                mainString += "Fiz ".bold()
+                mainString += "Fiz "
             } else if (i % num2 == 0) {
-                mainString += "Buz ".bold() + " "
+                mainString += "Buz "
                 console.log("should write buz")
             } else {
                 mainString += i + " "
