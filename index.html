@@ -317,20 +317,18 @@
                             <div class="overlay">
                                 <i class="fa fa-arrows-alt" aria-hidden="true"></i>
                             </div>
-                            <div class="title">Fiz Buz Challenge</div>
+                            <div class="title">Fizz Buzz Challenge</div>
                         </div>
                     </div>
 
-                    <!-- work item -->
+                    <!-- Palindrome Challenge -->
                     <div class="col-md-4 col-sm-6 mix app web">
-                        <div class="item">
-                            <a href="Images/4.jpg" class="work-popup">
-                                <img src="Images/4.jpg" alt="">
-                                <div class="overlay">
-                                    <i class="fa fa-arrows-alt" aria-hidden="true"></i>
-                                </div>
-                                <div class="title">Challenge Title</div>
-                            </a>
+                        <div id="showPalModal" class="item" style="cursor: pointer">
+                            <img src="Images/4.jpg">
+                            <div class="overlay">
+                                <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                            </div>
+                            <div class="title">Palindrome Challenge</div>
                         </div>
                     </div>
 
@@ -481,7 +479,7 @@ $(document).ready(function () {
 
     $("#generateNumbersForNumChallenge").click(generateNumbers)
 
-    $("#clearNumbersNumChallenge").click(clearNumbers);
+    $("#clearNumbersNumChallenge").click(clearAll);
 
     $("#toggleNumCode").click(toggleCode);
 
@@ -530,12 +528,16 @@ $(document).ready(function () {
         }
     }
 
-    function clearNumbers() {
+    function clearAnswers() {
         sumNumLabel.text("0")
         meanNumLabel.text("0")
         greatestNumLabel.text("0")
         leastNumLabel.text("0")
         productNumLabel.text("0")
+    }
+
+    function clearAll() {
+        clearAnswers()
 
         $("#num1Input").val("")
         $("#num2Input").val("")
@@ -544,14 +546,6 @@ $(document).ready(function () {
         $("#num5Input").val("")
 
         errorHeader.text("")
-    }
-
-    function clearAnswers() {
-        sumNumLabel.text("0")
-        meanNumLabel.text("0")
-        greatestNumLabel.text("0")
-        leastNumLabel.text("0")
-        productNumLabel.text("0")
     }
 
     function toggleCode() {
@@ -606,32 +600,31 @@ $(document).ready(function () {
                     <div class="row">
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
-                            <input type="text" id="factorialInput" class="numberInput100" />
+                            <input type="text" id="facInput" class="numberInput100" />
                         </div>
                         <div class="col-md-3"></div>
                     </div>
                     <div class="row">
                         <div class="col-md-12" style="text-align: center">
-                            <h3 id="factorialAnswerLabel" style="text-align: center"></h3>
+                            <h3 id="facAnswerHeader" style="text-align: center"></h3>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12" style="text-align: center">
-                            <h5 id="factorialChallengeErrorHeader" style="text-align: center"></h5>
+                            <h5 id="facErrorHeader" style="text-align: center"></h5>
                         </div>
                     </div>
                 </div>
 
-                <div class="container-fluid" id="codeContainerForFacChallenge" style="display: none">
+                <div class="container-fluid" id="codeFacChallenge" style="display: none">
                     <pre class="prettyprint">
 $(document).ready(function () {
 
-    let factorialAnswerLabel = $("#factorialAnswerLabel")
-    
+    let facAnswerHeader = $("#facAnswerHeader")
 
-    let errorLabel = $("#factorialChallengeErrorHeader")
+    let errorLabel = $("#facErrorHeader")
 
-    let codeContainer = $("#codeContainerForFactorialChallenge")
+    let codeContainer = $("#codeFacChallenge")
 
     let modal = $("#facModalDialog")
 
@@ -639,42 +632,42 @@ $(document).ready(function () {
         $("#facModal").modal();
     });
 
-    $("#generateNumForFacChallenge").click(generateNumbers)
+    $("#generateFac").click(generateNumbers)
 
-    $("#clearNumbersFacChallenge").click(clearNumbers)
+    $("#clearNumbersFacChallenge").click(clearAll)
 
     $("#toggleFacCode").click(toggleCode);
 
     function generateNumbers() {
-        let factorialInput = $("#factorialInput").val()
+        let facInput = $("#facInput").val()
 
-        if (factorialInput != "") {
-            if (factorialInput == parseInt(factorialInput).toString()) {
-                factorialInput = parseInt(factorialInput)
-                if (factorialInput > 0) {
+        if (facInput != "") {
+            if (facInput == parseInt(facInput).toString()) {
+                facInput = parseInt(facInput)
+                if (facInput > 0) {
                     let answer = 1
-                    for (var i = factorialInput; i > 0; i--) {
+                    for (var i = facInput; i > 0; i--) {
                         answer *= i
                     }
-                    factorialAnswerLabel.text("The factorial of " + factorialInput + " is " + answer + ".")
+                    facAnswerHeader.text("The factorial of " + facInput + " is " + answer + ".")
                     errorLabel.text("")
                 } else {
-                    factorialAnswerLabel.text("")
+                    facAnswerHeader.text("")
                     errorLabel.text("Cannot find the factorial of a negative number.")
                 } 
             } else {
-                factorialAnswerLabel.text("")
+                facAnswerHeader.text("")
                 errorLabel.text("Please only enter whole numbers.")
             }
         } else {
-            factorialAnswerLabel.text("")
+            facAnswerHeader.text("")
             errorLabel.text("Please enter a number.")
         } 
     }
 
-    function clearNumbers() {
-        $("#factorialInput").val("")
-        factorialAnswerLabel.text("")
+    function clearAll() {
+        $("#facInput").val("")
+        facAnswerHeader.text("")
         errorLabel.text("")
     }
 
@@ -699,7 +692,7 @@ $(document).ready(function () {
                 <div class="modal-footer">
                     <button type="button" class="btn btn-white pull-left" id="toggleFacCode" style="">Show Code</button>
                     <button type="button" class="btn btn-white" id="clearNumbersFacChallenge">Clear</button>
-                    <button type="button" class="btn btn-white" id="generateNumForFacChallenge">Generate</button>
+                    <button type="button" class="btn btn-white" id="generateFac">Generate</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -715,11 +708,16 @@ $(document).ready(function () {
             <div class="modal-content">
 
                 <div class="modal-header">
-                    <h1 class="modal-title">Fiz Buz Challenge</h1>
-                    <h5 class="modal-title">This program takes in two numbers and generates "Fiz", "Buz", and "Fiz Buz" in different positions.</h5>
+                    <h1 class="modal-title">Fizz Buzz Challenge</h1>
+                    <h5 class="modal-title">This program takes in two numbers and generates "Fizz", "Buzz", and "FIZZ BUZZ" in different positions.</h5>
                 </div>
 
                 <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 style="text-align: center">Enter a Number</h2>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-md-3"></div>
                         <div class="col-md-3">Number One</div>
@@ -735,6 +733,9 @@ $(document).ready(function () {
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-lg-12"><p></p></div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-1"></div>
                         <div class="col-md-10">
                             <p id="fizBox" style="text-align: center"></p>
@@ -748,58 +749,197 @@ $(document).ready(function () {
                     </div>
                 </div>
 
-                <div class="container-fluid" id="codeContainerForFizChallenge" style="display: none">
+                <div class="container-fluid" id="codeFizChallenge" style="display: none">
                     <pre class="prettyprint">
 $(document).ready(function () {
 
-    let factorialAnswerLabel = $("#factorialAnswerLabel")
+    let fizBox = $("#fizBox")
 
-    let errorLabel = $("#factorialChallengeErrorHeader")
+    let errorHeader = $("#fizChallengeErrorHeader")
 
-    let codeContainer = $("#codeContainerForFactorialChallenge")
+    let codeContainer = $("#codeFizChallenge")
 
-    let modal = $("#facModalDialog")
+    let modal = $("#fizModalDialog")
 
-    $("#showFacModal").click(function () {
-        $("#facModal").modal();
+    $("#showFizModal").click(function () {
+        $("#fizModal").modal();
     });
 
-    $("#generateNumForFacChallenge").click(generateNumbers)
+    $("#generateForFizChallenge").click(generateString)
 
-    $("#clearNumbersFacChallenge").click(clearNumbers)
+    $("#clearNumbersFizChallenge").click(clearAnswers)
 
-    $("#toggleFacCode").click(toggleCode);
+    $("#toggleFizCode").click(toggleCode);
 
-    function generateNumbers() {
-        let factorialInput = $("#factorialInput").val()
+    function generateString() {
+        fizBox.text("")
+        let num1 = $("#num1FizInput").val()
+        let num2 = $("#num2FizInput").val()
+        let numbers = [num1, num2]
 
-        if (factorialInput != "") {
-            if (factorialInput == parseInt(factorialInput).toString()) {
-                factorialInput = parseInt(factorialInput)
-                if (factorialInput > 0) {
-                    let answer = 1
-                    for (var i = factorialInput; i > 0; i--) {
-                        answer *= i
-                    }
-                    factorialAnswerLabel.text("The factorial of " + factorialInput + " is " + answer + ".")
-                    errorLabel.text("")
+        for (var i = 0; i < numbers.length; i++) {
+            if (numbers[i] != "") {
+                if (numbers[i] == parseInt(numbers[i]).toString()) {
+                    numbers[i] = parseInt(numbers[i])
+                    errorHeader.text("")
                 } else {
-                    factorialAnswerLabel.text("")
-                    errorLabel.text("Cannot find the factorial of a negative number.")
-                } 
+                    clearAnswers()
+                    errorHeader.text("Please only enter whole numbers.")
+                    break
+                }
             } else {
-                factorialAnswerLabel.text("")
-                errorLabel.text("Please only enter whole numbers.")
+                clearAnswers()
+                errorHeader.text("Please fill each number slot.")
             }
-        } else {
-            factorialAnswerLabel.text("")
-            errorLabel.text("Please enter a number.")
-        } 
+        }
+
+        if (errorHeader.text() == "") {
+            for (var i = 1; i <= 100; i++) {
+                if (i % num1 == 0 && i % num2 == 0) {
+                    fizBox.append("<span class='fizzBuzz'>FIZZ BUZZ </span>")
+                } else if (i % num1 == 0) {
+                    fizBox.append("<span class='fizz'>Fiz </span>")
+                } else if (i % num2 == 0) {
+                    fizBox.append("<span class='buzz'>Buz </span>")
+                } else {
+                    fizBox.append(i + " ")
+                }
+            }
+        }
     }
 
-    function clearNumbers() {
-        $("#factorialInput").val("")
-        factorialAnswerLabel.text("")
+    function clearAnswers() {
+        fizBox.text("")
+        errorHeader.text("")
+    }
+
+    function clearAll() {
+        clearAnswers()
+        $("#num1FizInput").val("")
+        $("#num2FizInput").val("")
+    }
+
+    function toggleCode() {
+        console.log("toggle code button pressed")
+        if (codeContainer.css("display") == "none") {
+            codeContainer.css("display", "block")
+            this.innerText = "Hide Code"
+            this.className = "btn btn-danger pull-left"
+            console.log("Code should be hidden")
+        } else {
+            codeContainer.css("display", "none")
+            this.className = "btn btn-white pull-left"
+            this.innerText = "Show Code"
+            console.log("code should be showing")
+        }
+    }
+
+});
+                    </pre>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white pull-left" id="toggleFizCode" style="">Show Code</button>
+                    <button type="button" class="btn btn-white" id="clearNumbersFizChallenge">Clear</button>
+                    <button type="button" class="btn btn-white" id="generateForFizChallenge">Generate</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Fiz Buz Challenge Modal Ends -->
+    <!-- Palindrome Challenge Modal Starts-->
+    <div id="palModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-md" id="palModalDialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h1 class="modal-title">Palindrome Challenge</h1>
+                    <h5 class="modal-title">This program takes in a word and checks if it's a palindrome.</h5>
+                    <h5 class="modal-title">ie. Radar is a plaindrome.</h5>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 style="text-align: center">Enter a Word</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <input type="text" id="palInput" class="numberInput100" />
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" style="text-align: center">
+                            <h3 id="palAnswerHeader" style="text-align: center"></h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" style="text-align: center">
+                            <h5 id="palErrorHeader" style="text-align: center"></h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid" id="codePalChallenge" style="display: none">
+                    <pre class="prettyprint">
+$(document).ready(function () {
+
+    let palAnswerHeader = $("#palAnswerHeader")
+
+    let errorLabel = $("#palErrorHeader")
+
+    let codeContainer = $("#codePalChallenge")
+
+    let modal = $("#palModalDialog")
+
+    $("#showPalModal").click(function () {
+        $("#palModal").modal();
+    });
+
+    $("#generatePal").click(generatePalindrome)
+
+    $("#clearForPalChallenge").click(clearAll)
+
+    $("#togglePalCode").click(toggleCode);
+
+    function generatePalindrome() {
+        let enteredWord = $("#palInput").val().toLowerCase()
+        if (enteredWord += "") {
+            if (enteredWord != parseInt(enteredWord).toString()) {
+                if (enteredWord.length >= 3) {
+                    let reversedWord = enteredWord.split("").reverse().join("")
+                    if (enteredWord == reversedWord) {
+                        enteredWord = enteredWord.charAt(0).toUpperCase() + enteredWord.slice(1)
+                        palAnswerHeader.text(`${enteredWord} is a palindrome.`)
+                    } else {
+                        enteredWord = enteredWord.charAt(0).toUpperCase() + enteredWord.slice(1)
+                        palAnswerHeader.text(`${enteredWord} is not a plaindrome.`)
+                    }
+                    errorLabel.text("")
+                } else {
+                    palAnswerHeader.text("")
+                    errorLabel.text("Please enter at least three letters.")
+                }
+            } else {
+                palAnswerHeader.text("")
+                errorLabel.text("Please only enter letters.")
+            }
+        } else {
+            palAnswerHeader.text("")
+            errorLabel.text("Please enter a word.")
+        }
+    }
+
+    function clearAll() {
+        $("#palInput").val("")
+        palAnswerHeader.text("")
         errorLabel.text("")
     }
 
@@ -822,131 +962,16 @@ $(document).ready(function () {
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-white pull-left" id="toggleFizCode" style="">Show Code</button>
-                    <button type="button" class="btn btn-white" id="clearNumbersFizChallenge">Clear</button>
-                    <button type="button" class="btn btn-white" id="generateForFizChallenge">Generate</button>
+                    <button type="button" class="btn btn-white pull-left" id="togglePalCode" style="">Show Code</button>
+                    <button type="button" class="btn btn-white" id="clearForPalChallenge">Clear</button>
+                    <button type="button" class="btn btn-white" id="generatePal">Generate</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
             </div>
 
         </div>
     </div>
-    <!-- Fiz Buz Challenge Modal Ends -->
-    <!-- Homework Modal 2 Starts-->
-    <div id="homeWorkModal2" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-xl">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Homework Grid 2</h4>
-                </div>
-
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-3">
-                            1
-                        </div>
-                        <div class="col-md-3">
-                            2
-                        </div>
-                    </div>
-                    <div class="row">
-                        <h2>
-                            H2
-                        </h2>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-2">
-                            3
-                        </div>
-                        <div class="col-md-2">
-                            4
-                        </div>
-                        <div class="col-md-2">
-                            5
-                        </div>
-                        <div class="col-md-2">
-                            6
-                        </div>
-                        <div class="col-md-2">
-                            7
-                        </div>
-                        <div class="col-md-2">
-                            8
-                        </div>
-                    </div>
-                    <div class="row">
-                        <h3>
-                            H3
-                        </h3>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-1">
-                            9
-                        </div>
-                        <div class="col-md-1">
-                            10
-                        </div>
-                        <div class="col-md-1">
-                            11
-                        </div>
-                        <div class="col-md-1">
-                            12
-                        </div>
-                        <div class="col-md-1">
-                            13
-                        </div>
-                        <div class="col-md-1">
-                            14
-                        </div>
-                        <div class="col-md-1">
-                            15
-                        </div>
-                        <div class="col-md-1">
-                            16
-                        </div>
-                        <div class="col-md-1">
-                            17
-                        </div>
-                        <div class="col-md-1">
-                            18
-                        </div>
-                        <div class="col-md-1">
-                            19
-                        </div>
-                        <div class="col-md-1">
-                            20
-                        </div>
-                    </div>
-                    <div class="row">
-                        <h4>
-                            H4
-                        </h4>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3">
-                            21
-                        </div>
-                        <div class="col-md-3">
-                            22
-                        </div>
-                        <div class="col-md-3">
-                            23
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <!-- Home Work Modal Ends -->
+    <!-- Palindrome Challenge Modal Ends -->
     <!-- Testimonial Area was here. -->
     <!-- Contact area starts -->
     <section id="contact" class="contact-area section-big">
@@ -1063,14 +1088,16 @@ $(document).ready(function () {
     <!-- Fiz Buz Challenge Modal -->
     <script src="Scripts/fizBuzChallenge.js"></script>
 
+    <!-- Fiz Buz Challenge Modal -->
+    <script src="Scripts/palindromeChallenge.js"></script>
+
     <!-- Sweet Alert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
     <!-- Pretty Print -->
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 
-
-    <!-- Main js-->
+    <!-- Main js -->
     <script src="Scripts/main_script.js"></script>
 </body>
 </html>

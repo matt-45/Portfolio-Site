@@ -1,10 +1,10 @@
 ﻿$(document).ready(function () {
 
-    let factorialAnswerLabel = $("#factorialAnswerLabel")
+    let facAnswerHeader = $("#facAnswerHeader")
 
-    let errorLabel = $("#factorialChallengeErrorHeader")
+    let errorLabel = $("#facErrorHeader")
 
-    let codeContainer = $("#codeContainerForFacChallenge")
+    let codeContainer = $("#codeFacChallenge")
 
     let modal = $("#facModalDialog")
 
@@ -12,42 +12,42 @@
         $("#facModal").modal();
     });
 
-    $("#generateNumForFacChallenge").click(generateNumbers)
+    $("#generateFac").click(generateNumbers)
 
-    $("#clearNumbersFacChallenge").click(clearNumbers)
+    $("#clearNumbersFacChallenge").click(clearAll)
 
     $("#toggleFacCode").click(toggleCode);
 
     function generateNumbers() {
-        let factorialInput = $("#factorialInput").val()
+        let facInput = $("#facInput").val()
 
-        if (factorialInput != "") {
-            if (factorialInput == parseInt(factorialInput).toString()) {
-                factorialInput = parseInt(factorialInput)
-                if (factorialInput > 0) {
+        if (facInput != "") {
+            if (facInput == parseInt(facInput).toString()) {
+                facInput = parseInt(facInput)
+                if (facInput > 0) {
                     let answer = 1
-                    for (var i = factorialInput; i > 0; i--) {
+                    for (var i = facInput; i > 0; i--) {
                         answer *= i
                     }
-                    factorialAnswerLabel.text("The factorial of " + factorialInput + " is " + answer + ".")
+                    facAnswerHeader.text("The factorial of " + facInput + " is " + answer + ".")
                     errorLabel.text("")
                 } else {
-                    factorialAnswerLabel.text("")
+                    facAnswerHeader.text("")
                     errorLabel.text("Cannot find the factorial of a negative number.")
                 } 
             } else {
-                factorialAnswerLabel.text("")
+                facAnswerHeader.text("")
                 errorLabel.text("Please only enter whole numbers.")
             }
         } else {
-            factorialAnswerLabel.text("")
+            facAnswerHeader.text("")
             errorLabel.text("Please enter a number.")
         } 
     }
 
-    function clearNumbers() {
-        $("#factorialInput").val("")
-        factorialAnswerLabel.text("")
+    function clearAll() {
+        $("#facInput").val("")
+        facAnswerHeader.text("")
         errorLabel.text("")
     }
 

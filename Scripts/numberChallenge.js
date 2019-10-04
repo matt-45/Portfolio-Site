@@ -17,7 +17,7 @@
 
     $("#generateNumbersForNumChallenge").click(generateNumbers)
 
-    $("#clearNumbersNumChallenge").click(clearNumbers);
+    $("#clearNumbersNumChallenge").click(clearAll);
 
     $("#toggleNumCode").click(toggleCode);
 
@@ -66,12 +66,16 @@
         }
     }
 
-    function clearNumbers() {
+    function clearAnswers() {
         sumNumLabel.text("0")
         meanNumLabel.text("0")
         greatestNumLabel.text("0")
         leastNumLabel.text("0")
         productNumLabel.text("0")
+    }
+
+    function clearAll() {
+        clearAnswers()
 
         $("#num1Input").val("")
         $("#num2Input").val("")
@@ -80,14 +84,6 @@
         $("#num5Input").val("")
 
         errorHeader.text("")
-    }
-
-    function clearAnswers() {
-        sumNumLabel.text("0")
-        meanNumLabel.text("0")
-        greatestNumLabel.text("0")
-        leastNumLabel.text("0")
-        productNumLabel.text("0")
     }
 
     function toggleCode() {

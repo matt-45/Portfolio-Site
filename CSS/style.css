@@ -437,7 +437,19 @@ img {
     bottom: 90px;
 }
 
+.fizz {
+    font-weight: bold;
+    color: darkred
+}
+.buzz {
+    font-weight: bold;
+    color: darkblue;
+}
 
+.fizzBuzz {
+    font-weight: bold;
+    color: darkgreen;
+}
 
 
 

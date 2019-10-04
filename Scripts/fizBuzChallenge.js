@@ -2,9 +2,9 @@
 
     let fizBox = $("#fizBox")
 
-    let errorLabel = $("#fizChallengeErrorHeader")
+    let errorHeader = $("#fizChallengeErrorHeader")
 
-    let codeContainer = $("#codeContainerFizFactorialChallenge")
+    let codeContainer = $("#codeFizChallenge")
 
     let modal = $("#fizModalDialog")
 
@@ -14,47 +14,70 @@
 
     $("#generateForFizChallenge").click(generateString)
 
-    $("#clearNumbersFizChallenge").click(clearNumbers)
+    $("#clearNumbersFizChallenge").click(clearAnswers)
 
     $("#toggleFizCode").click(toggleCode);
 
     function generateString() {
-        let mainString = ""
+        fizBox.text("")
         let num1 = $("#num1FizInput").val()
         let num2 = $("#num2FizInput").val()
+        let numbers = [num1, num2]
 
-        for (var i = 1; i < 100; i++) {
-            if (i % num1 == 0 && i % num2 == 0) {
-                mainString += "FIZ BUZ "
-            } else if (i % num1 == 0) {
-                mainString += "Fiz "
-            } else if (i % num2 == 0) {
-                mainString += "Buz "
-                console.log("should write buz")
+        for (var i = 0; i < numbers.length; i++) {
+            if (numbers[i] != "") {
+                if (numbers[i] == parseInt(numbers[i]).toString()) {
+                    numbers[i] = parseInt(numbers[i])
+                    errorHeader.text("")
+                } else {
+                    clearAnswers()
+                    errorHeader.text("Please only enter whole numbers.")
+                    break
+                }
             } else {
-                mainString += i + " "
+                clearAnswers()
+                errorHeader.text("Please fill each number slot.")
             }
         }
-        fizBox.text(mainString)
+
+        if (errorHeader.text() == "") {
+            for (var i = 1; i <= 100; i++) {
+                if (i % num1 == 0 && i % num2 == 0) {
+                    fizBox.append("<span class='fizzBuzz'>FIZZ BUZZ </span>")
+                } else if (i % num1 == 0) {
+                    fizBox.append("<span class='fizz'>Fiz </span>")
+                } else if (i % num2 == 0) {
+                    fizBox.append("<span class='buzz'>Buz </span>")
+                } else {
+                    fizBox.append(i + " ")
+                }
+            }
+        }
     }
 
-    function clearNumbers() {
-        $("#factorialInput").val("")
-        factorialAnswerLabel.text("")
-        errorLabel.text("")
+    function clearAnswers() {
+        fizBox.text("")
+        errorHeader.text("")
+    }
+
+    function clearAll() {
+        clearAnswers()
+        $("#num1FizInput").val("")
+        $("#num2FizInput").val("")
     }
 
     function toggleCode() {
+        console.log("toggle code button pressed")
         if (codeContainer.css("display") == "none") {
             codeContainer.css("display", "block")
-            modal.attr("class", "modal-dialog modal-lg")
             this.innerText = "Hide Code"
             this.className = "btn btn-danger pull-left"
+            console.log("Code should be hidden")
         } else {
             codeContainer.css("display", "none")
-            modal.attr("class", "modal-dialog modal-md")
             this.className = "btn btn-white pull-left"
             this.innerText = "Show Code"
+            console.log("code should be showing")
         }
     }
 
