@@ -29,7 +29,7 @@
                     for (var i = facInput; i > 0; i--) {
                         answer *= i
                     }
-                    facAnswerHeader.text("The factorial of " + facInput + " is " + answer + ".")
+                    facAnswerHeader.text(`The factorial of ${facInput} is ${answer}.`)
                     errorLabel.text("")
                 } else {
                     facAnswerHeader.text("")

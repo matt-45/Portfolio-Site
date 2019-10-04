@@ -14,7 +14,7 @@
 
     $("#generateForFizChallenge").click(generateString)
 
-    $("#clearNumbersFizChallenge").click(clearAnswers)
+    $("#clearNumbersFizChallenge").click(clearAll)
 
     $("#toggleFizCode").click(toggleCode);
 

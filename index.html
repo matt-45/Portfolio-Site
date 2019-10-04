@@ -291,7 +291,7 @@
                     <div class="col-md-4 col-sm-6 mix web">
                         <div id="showNumModal" class="item" style="cursor: pointer">
                             <!---->
-                            <img src="Images/1.jpg">
+                            <img src="Images/NumbersChallenge800x600.jpg">
                             <div class="overlay">
                                 <i class="fa fa-arrows-alt" aria-hidden="true"></i>
                             </div>
@@ -302,7 +302,7 @@
                     <!-- Factorial Challenge -->
                     <div class="col-md-4 col-sm-6 mix graphic">
                         <div id="showFacModal" class="item" style="cursor: pointer">
-                            <img src="Images/2.jpg">
+                            <img src="Images/FactorialChallenge800x600.jpg">
                             <div class="overlay">
                                 <i class="fa fa-arrows-alt" aria-hidden="true"></i>
                             </div>
@@ -313,7 +313,7 @@
                     <!-- Fiz Buz Challenge -->
                     <div class="col-md-4 col-sm-6 mix typography web">
                         <div id="showFizModal" class="item" style="cursor: pointer">
-                            <img src="Images/3.jpg">
+                            <img src="Images/FizzBuzz800x600.jpg">
                             <div class="overlay">
                                 <i class="fa fa-arrows-alt" aria-hidden="true"></i>
                             </div>
@@ -324,7 +324,7 @@
                     <!-- Palindrome Challenge -->
                     <div class="col-md-4 col-sm-6 mix app web">
                         <div id="showPalModal" class="item" style="cursor: pointer">
-                            <img src="Images/4.jpg">
+                            <img src="Images/Palindrome800x600.jpg">
                             <div class="overlay">
                                 <i class="fa fa-arrows-alt" aria-hidden="true"></i>
                             </div>
@@ -623,7 +623,7 @@ $(document).ready(function () {
                     for (var i = facInput; i > 0; i--) {
                         answer *= i
                     }
-                    facAnswerHeader.text("The factorial of " + facInput + " is " + answer + ".")
+                    facAnswerHeader.text(`The factorial of ${facInput} is ${answer}.`)
                     errorLabel.text("")
                 } else {
                     facAnswerHeader.text("")

@@ -21,7 +21,9 @@
     function generatePalindrome() {
         let enteredWord = $("#palInput").val().toLowerCase()
         if (enteredWord += "") {
-            if (enteredWord != parseInt(enteredWord).toString()) {
+            var patt1 = /[0-9]/g;
+            var result = enteredWord.match(patt1);
+            if (result == null) {
                 if (enteredWord.length >= 3) {
                     let reversedWord = enteredWord.split("").reverse().join("")
                     if (enteredWord == reversedWord) {

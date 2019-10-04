@@ -102,8 +102,12 @@
     <Content Include="Images\5.jpg" />
     <Content Include="Images\6.jpg" />
     <Content Include="Images\about.jpg" />
+    <Content Include="Images\FactorialChallenge800x600.jpg" />
     <Content Include="Images\favicon.png" />
+    <Content Include="Images\FizzBuzz800x600.jpg" />
     <Content Include="Images\intro-bg.jpg" />
+    <Content Include="Images\NumbersChallenge800x600.jpg" />
+    <Content Include="Images\Palindrome800x600.jpg" />
     <Content Include="Images\preloader.gif" />
     <Content Include="index.html">
       <BrowseToURL>~/index.html</BrowseToURL>
