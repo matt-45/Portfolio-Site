@@ -20,27 +20,25 @@
 
     function generatePalindrome() {
         let enteredWord = $("#palInput").val().toLowerCase()
-        if (enteredWord += "") {
-            var patt1 = /[0-9]/g;
-            var result = enteredWord.match(patt1);
-            if (result == null) {
-                if (enteredWord.length >= 3) {
-                    let reversedWord = enteredWord.split("").reverse().join("")
-                    if (enteredWord == reversedWord) {
-                        enteredWord = enteredWord.charAt(0).toUpperCase() + enteredWord.slice(1)
-                        palAnswerHeader.text(`${enteredWord} is a palindrome.`)
-                    } else {
-                        enteredWord = enteredWord.charAt(0).toUpperCase() + enteredWord.slice(1)
-                        palAnswerHeader.text(`${enteredWord} is not a plaindrome.`)
-                    }
-                    errorLabel.text("")
+        enteredWord = enteredWord.replace(/\s/g, "");
+        if (enteredWord != "") {
+            var pat = /[0-9 a-z]/g;
+            enteredWord = enteredWord.match(pat).join("");
+            
+            if (enteredWord.length >= 3) {
+                let reversedWord = enteredWord.split("").reverse().join("")
+                console.log(enteredWord)
+                console.log(reversedWord)
+                if (enteredWord == reversedWord) {
+                    palAnswerHeader.text(`${$("#palInput").val()} is a palindrome.`)
                 } else {
-                    palAnswerHeader.text("")
-                    errorLabel.text("Please enter at least three letters.")
+                    enteredWord = enteredWord.charAt(0).toUpperCase() + enteredWord.slice(1)
+                    palAnswerHeader.text(`${$("#palInput").val()} is not a plaindrome.`)
                 }
+                errorLabel.text("")
             } else {
                 palAnswerHeader.text("")
-                errorLabel.text("Please only enter letters.")
+                errorLabel.text("Please enter at least three letters.")
             }
         } else {
             palAnswerHeader.text("")
@@ -67,5 +65,7 @@
             this.innerText = "Show Code"
         }
     }
+
+    //$.getScript("challengeMethods.js")
 
 });

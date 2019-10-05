@@ -113,6 +113,7 @@
       <BrowseToURL>~/index.html</BrowseToURL>
     </Content>
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\challengeMethods.js" />
     <Content Include="Scripts\factorialChallenge.js" />
     <Content Include="Scripts\fizBuzChallenge.js" />
     <Content Include="Scripts\numberChallenge.js" />

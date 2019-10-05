@@ -37,6 +37,7 @@
             } else {
                 clearAnswers()
                 errorHeader.text("Please fill each number slot.")
+                break
             }
         }
 
@@ -80,5 +81,7 @@
             console.log("code should be showing")
         }
     }
+
+    $.getScript()
 
 });
