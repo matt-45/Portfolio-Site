@@ -32,8 +32,8 @@
 
         for (var i = 0; i < numbers.length; i++) {
             if (numbers[i] != "") {
-                if (numbers[i] == parseInt(numbers[i]).toString()) {
-                    numbers[i] = parseInt(numbers[i])
+                if (numbers[i] == parseFloat(numbers[i]).toString()) {
+                    numbers[i] = parseFloat(numbers[i])
                     errorHeader.text("")
                 } else {
                     clearAnswers()

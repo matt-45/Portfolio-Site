@@ -434,30 +434,7 @@
                 </div>
                 <div class="container-fluid" id="codeNumChallenge" style="display: none">
                     <pre class="prettyprint">
-$(document).ready(function () {
-    let leastNumLabel = $("#leastNum")
-    let greatestNumLabel = $("#greatestNum")
-    let meanNumLabel = $("#meanNum")
-    let sumNumLabel = $("#sumNum")
-    let productNumLabel = $("#productNum")
-
-    let errorHeader = $("#numErrorHeader")
-
-    let codeContainer = $("#codeNumChallenge")
-
-    let modal = $("#numModalDialog")
-
-    $("#showNumModal").click(function () {
-        $("#numModal").modal();
-    });
-
-    $("#generateNumbersForNumChallenge").click(generateNumbers)
-
-    $("#clearNumbersNumChallenge").click(clearAll);
-
-    $("#toggleNumCode").click(toggleCode);
-
-    function generateNumbers() {
+function generateNumbers() {
         let n1Input = $("#num1Input").val()
         let n2Input = $("#num2Input").val()
         let n3Input = $("#num3Input").val()
@@ -468,8 +445,8 @@ $(document).ready(function () {
 
         for (var i = 0; i < numbers.length; i++) {
             if (numbers[i] != "") {
-                if (numbers[i] == parseInt(numbers[i]).toString()) {
-                    numbers[i] = parseInt(numbers[i])
+                if (numbers[i] == parseFloat(numbers[i]).toString()) {
+                    numbers[i] = parseFloat(numbers[i])
                     errorHeader.text("")
                 } else {
                     clearAnswers()
@@ -501,42 +478,6 @@ $(document).ready(function () {
             leastNumLabel.text(least)
         }
     }
-
-    function clearAnswers() {
-        sumNumLabel.text("0")
-        meanNumLabel.text("0")
-        greatestNumLabel.text("0")
-        leastNumLabel.text("0")
-        productNumLabel.text("0")
-    }
-
-    function clearAll() {
-        clearAnswers()
-
-        $("#num1Input").val("")
-        $("#num2Input").val("")
-        $("#num3Input").val("")
-        $("#num4Input").val("")
-        $("#num5Input").val("")
-
-        errorHeader.text("")
-    }
-
-    function toggleCode() {
-        if (codeContainer.css("display") == "none") {
-            codeContainer.css("display", "block")
-            modal.attr("class", "modal-dialog modal-lg")
-            this.innerText = "Hide Code"
-            this.className = "btn btn-danger pull-left"
-        } else {
-            codeContainer.css("display", "none")
-            modal.attr("class", "modal-dialog modal-md")
-            this.className = "btn btn-white pull-left"
-            this.innerText = "Show Code"
-        }
-    }
-
-});
                     </pre>
                 </div>
 
@@ -592,27 +533,7 @@ $(document).ready(function () {
 
                 <div class="container-fluid" id="codeFacChallenge" style="display: none">
                     <pre class="prettyprint">
-$(document).ready(function () {
-
-    let facAnswerHeader = $("#facAnswerHeader")
-
-    let errorLabel = $("#facErrorHeader")
-
-    let codeContainer = $("#codeFacChallenge")
-
-    let modal = $("#facModalDialog")
-
-    $("#showFacModal").click(function () {
-        $("#facModal").modal();
-    });
-
-    $("#generateFac").click(generateNumbers)
-
-    $("#clearNumbersFacChallenge").click(clearAll)
-
-    $("#toggleFacCode").click(toggleCode);
-
-    function generateNumbers() {
+function generateNumbers() {
         let facInput = $("#facInput").val()
 
         if (facInput != "") {
@@ -638,28 +559,6 @@ $(document).ready(function () {
             errorLabel.text("Please enter a number.")
         } 
     }
-
-    function clearAll() {
-        $("#facInput").val("")
-        facAnswerHeader.text("")
-        errorLabel.text("")
-    }
-
-    function toggleCode() {
-        if (codeContainer.css("display") == "none") {
-            codeContainer.css("display", "block")
-            modal.attr("class", "modal-dialog modal-lg")
-            this.innerText = "Hide Code"
-            this.className = "btn btn-danger pull-left"
-        } else {
-            codeContainer.css("display", "none")
-            modal.attr("class", "modal-dialog modal-md")
-            this.className = "btn btn-white pull-left"
-            this.innerText = "Show Code"
-        }
-    }
-
-});
                     </pre>
                 </div>
 
@@ -725,27 +624,7 @@ $(document).ready(function () {
 
                 <div class="container-fluid" id="codeFizChallenge" style="display: none">
                     <pre class="prettyprint">
-$(document).ready(function () {
-
-    let fizBox = $("#fizBox")
-
-    let errorHeader = $("#fizChallengeErrorHeader")
-
-    let codeContainer = $("#codeFizChallenge")
-
-    let modal = $("#fizModalDialog")
-
-    $("#showFizModal").click(function () {
-        $("#fizModal").modal();
-    });
-
-    $("#generateForFizChallenge").click(generateString)
-
-    $("#clearNumbersFizChallenge").click(clearAnswers)
-
-    $("#toggleFizCode").click(toggleCode);
-
-    function generateString() {
+function generateString() {
         fizBox.text("")
         let num1 = $("#num1FizInput").val()
         let num2 = $("#num2FizInput").val()
@@ -764,6 +643,7 @@ $(document).ready(function () {
             } else {
                 clearAnswers()
                 errorHeader.text("Please fill each number slot.")
+                break
             }
         }
 
@@ -781,34 +661,6 @@ $(document).ready(function () {
             }
         }
     }
-
-    function clearAnswers() {
-        fizBox.text("")
-        errorHeader.text("")
-    }
-
-    function clearAll() {
-        clearAnswers()
-        $("#num1FizInput").val("")
-        $("#num2FizInput").val("")
-    }
-
-    function toggleCode() {
-        console.log("toggle code button pressed")
-        if (codeContainer.css("display") == "none") {
-            codeContainer.css("display", "block")
-            this.innerText = "Hide Code"
-            this.className = "btn btn-danger pull-left"
-            console.log("Code should be hidden")
-        } else {
-            codeContainer.css("display", "none")
-            this.className = "btn btn-white pull-left"
-            this.innerText = "Show Code"
-            console.log("code should be showing")
-        }
-    }
-
-});
                     </pre>
                 </div>
 
@@ -863,75 +715,33 @@ $(document).ready(function () {
 
                 <div class="container-fluid" id="codePalChallenge" style="display: none">
                     <pre class="prettyprint">
-$(document).ready(function () {
-
-    let palAnswerHeader = $("#palAnswerHeader")
-
-    let errorLabel = $("#palErrorHeader")
-
-    let codeContainer = $("#codePalChallenge")
-
-    let modal = $("#palModalDialog")
-
-    $("#showPalModal").click(function () {
-        $("#palModal").modal();
-    });
-
-    $("#generatePal").click(generatePalindrome)
-
-    $("#clearForPalChallenge").click(clearAll)
-
-    $("#togglePalCode").click(toggleCode);
-
-    function generatePalindrome() {
+function generatePalindrome() {
         let enteredWord = $("#palInput").val().toLowerCase()
-        if (enteredWord += "") {
-            if (enteredWord != parseInt(enteredWord).toString()) {
-                if (enteredWord.length >= 3) {
-                    let reversedWord = enteredWord.split("").reverse().join("")
-                    if (enteredWord == reversedWord) {
-                        enteredWord = enteredWord.charAt(0).toUpperCase() + enteredWord.slice(1)
-                        palAnswerHeader.text(`${enteredWord} is a palindrome.`)
-                    } else {
-                        enteredWord = enteredWord.charAt(0).toUpperCase() + enteredWord.slice(1)
-                        palAnswerHeader.text(`${enteredWord} is not a plaindrome.`)
-                    }
-                    errorLabel.text("")
+        enteredWord = enteredWord.replace(/\s/g, "");
+        if (enteredWord != "") {
+            var pat = /[0-9 a-z]/g;
+            enteredWord = enteredWord.match(pat).join("");
+            
+            if (enteredWord.length >= 3) {
+                let reversedWord = enteredWord.split("").reverse().join("")
+                console.log(enteredWord)
+                console.log(reversedWord)
+                if (enteredWord == reversedWord) {
+                    palAnswerHeader.text(`${$("#palInput").val()} is a palindrome.`)
                 } else {
-                    palAnswerHeader.text("")
-                    errorLabel.text("Please enter at least three letters.")
+                    enteredWord = enteredWord.charAt(0).toUpperCase() + enteredWord.slice(1)
+                    palAnswerHeader.text(`${$("#palInput").val()} is not a plaindrome.`)
                 }
+                errorLabel.text("")
             } else {
                 palAnswerHeader.text("")
-                errorLabel.text("Please only enter letters.")
+                errorLabel.text("Please enter at least three letters.")
             }
         } else {
             palAnswerHeader.text("")
             errorLabel.text("Please enter a word.")
         }
     }
-
-    function clearAll() {
-        $("#palInput").val("")
-        palAnswerHeader.text("")
-        errorLabel.text("")
-    }
-
-    function toggleCode() {
-        if (codeContainer.css("display") == "none") {
-            codeContainer.css("display", "block")
-            modal.attr("class", "modal-dialog modal-lg")
-            this.innerText = "Hide Code"
-            this.className = "btn btn-danger pull-left"
-        } else {
-            codeContainer.css("display", "none")
-            modal.attr("class", "modal-dialog modal-md")
-            this.className = "btn btn-white pull-left"
-            this.innerText = "Show Code"
-        }
-    }
-
-});
                     </pre>
                 </div>
 
