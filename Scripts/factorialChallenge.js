@@ -22,8 +22,8 @@
         let facInput = $("#facInput").val()
 
         if (facInput != "") {
-            if (facInput == parseInt(facInput).toString()) {
-                facInput = parseInt(facInput)
+            if (facInput == parseFloat(facInput).toString()) {
+                facInput = parseFloat(facInput)
                 if (facInput > 0) {
                     let answer = 1
                     for (var i = facInput; i > 0; i--) {
