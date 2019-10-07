@@ -77,11 +77,7 @@
     function clearAll() {
         clearAnswers()
 
-        $("#num1Input").val("")
-        $("#num2Input").val("")
-        $("#num3Input").val("")
-        $("#num4Input").val("")
-        $("#num5Input").val("")
+        $("#num1Input, #num2Input, #num3Input, #num4Input, #num5Input").val("")
 
         errorHeader.text("")
     }
