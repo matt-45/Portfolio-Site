@@ -75,6 +75,7 @@
     <Content Include="CSS\owl.carousel.min.css" />
     <Content Include="CSS\owl.transitions.css" />
     <Content Include="CSS\responsive.css" />
+    <Content Include="CSS\custom.css" />
     <Content Include="CSS\style.css" />
     <Content Include="Fonts\et-line.svg" />
     <Content Include="Fonts\fontawesome-webfont.svg" />

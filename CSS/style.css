@@ -1,15 +1,3 @@
-
-/* ----------------------------------------------------------------------------------------
-* Author        : web_bean
-* Template Name : ANAS - Personal Portfolio Html5 Template
-* File          : ANAS main CSS file
-* Version       : 1.0
-* ---------------------------------------------------------------------------------------- */
-
-
-
-
-
 /* INDEX
 ----------------------------------------------------------------------------------------
 
@@ -437,19 +425,7 @@ img {
     bottom: 90px;
 }
 
-.fizz {
-    font-weight: bold;
-    color: darkred
-}
-.buzz {
-    font-weight: bold;
-    color: darkblue;
-}
 
-.fizzBuzz {
-    font-weight: bold;
-    color: darkgreen;
-}
 
 
 
@@ -965,20 +941,4 @@ section {
 }
 
 
-/* ----------------------------------------------------------------------------------------
-*                                   14. Custom Styling
-* --------------------------------------------------------------------------------------- */
-
-.numberInput75 {
-    text-align: center;
-    width: 75%;
-}
-.numberInput100 {
-    text-align: center;
-    width: 100%;
-}
-
-.half-black {
-    background: rgba(255, 255, 255, .5);
-}
 

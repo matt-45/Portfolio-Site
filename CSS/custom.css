@@ -1,0 +1,29 @@
+
+/* ----------------------------------------------------------------------------------------
+*                                   1. Custom Styling
+* --------------------------------------------------------------------------------------- */
+
+.numberInput75 {
+    text-align: center;
+    width: 75%;
+}
+.numberInput100 {
+    text-align: center;
+    width: 100%;
+}
+
+.fizz {
+    font-weight: bold;
+    color: darkred
+}
+
+.buzz {
+    font-weight: bold;
+    color: darkblue;
+}
+
+.fizzBuzz {
+    font-weight: bold;
+    color: darkgreen;
+}
+
