@@ -86,8 +86,11 @@
     <Content Include="Images\6.jpg" />
     <Content Include="Images\about.jpg" />
     <Content Include="Images\BackgroundImage2000x1000.jpg" />
+    <Content Include="Images\Blog800x600.jpg" />
+    <Content Include="Images\BugTracker800x600.jpg" />
     <Content Include="Images\FactorialChallenge800x600.jpg" />
     <Content Include="Images\favicon.png" />
+    <Content Include="Images\FinancialPortal800x600.jpg" />
     <Content Include="Images\FizzBuzz800x600.jpg" />
     <Content Include="Images\NumbersChallenge800x600.jpg" />
     <Content Include="Images\Palindrome800x600.jpg" />
