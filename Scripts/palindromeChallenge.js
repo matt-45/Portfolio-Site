@@ -30,10 +30,10 @@
                 console.log(enteredWord)
                 console.log(reversedWord)
                 if (enteredWord == reversedWord) {
-                    palAnswerHeader.text(`${$("#palInput").val()} is a palindrome.`)
+                    palAnswerHeader.text(`"${$("#palInput").val()}" is a palindrome.`)
                 } else {
                     enteredWord = enteredWord.charAt(0).toUpperCase() + enteredWord.slice(1)
-                    palAnswerHeader.text(`${$("#palInput").val()} is not a plaindrome.`)
+                    palAnswerHeader.text(`"${$("#palInput").val()}" is not a plaindrome.`)
                 }
                 errorLabel.text("")
             } else {

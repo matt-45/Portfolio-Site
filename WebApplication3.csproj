@@ -67,23 +67,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\SyntaxHighlighter\shCore.css" />
-    <Content Include="Content\SyntaxHighlighter\shCoreDefault.css" />
-    <Content Include="Content\SyntaxHighlighter\shCoreDjango.css" />
-    <Content Include="Content\SyntaxHighlighter\shCoreEclipse.css" />
-    <Content Include="Content\SyntaxHighlighter\shCoreEmacs.css" />
-    <Content Include="Content\SyntaxHighlighter\shCoreFadeToGrey.css" />
-    <Content Include="Content\SyntaxHighlighter\shCoreMDUltra.css" />
-    <Content Include="Content\SyntaxHighlighter\shCoreMidnight.css" />
-    <Content Include="Content\SyntaxHighlighter\shCoreRDark.css" />
-    <Content Include="Content\SyntaxHighlighter\shThemeDefault.css" />
-    <Content Include="Content\SyntaxHighlighter\shThemeDjango.css" />
-    <Content Include="Content\SyntaxHighlighter\shThemeEclipse.css" />
-    <Content Include="Content\SyntaxHighlighter\shThemeEmacs.css" />
-    <Content Include="Content\SyntaxHighlighter\shThemeFadeToGrey.css" />
-    <Content Include="Content\SyntaxHighlighter\shThemeMDUltra.css" />
-    <Content Include="Content\SyntaxHighlighter\shThemeMidnight.css" />
-    <Content Include="Content\SyntaxHighlighter\shThemeRDark.css" />
     <Content Include="CSS\bootstrap.min.css" />
     <Content Include="CSS\et-line-icons.css" />
     <Content Include="CSS\font-awesome.min.css" />
@@ -102,10 +85,10 @@
     <Content Include="Images\5.jpg" />
     <Content Include="Images\6.jpg" />
     <Content Include="Images\about.jpg" />
+    <Content Include="Images\BackgroundImage2000x1000.jpg" />
     <Content Include="Images\FactorialChallenge800x600.jpg" />
     <Content Include="Images\favicon.png" />
     <Content Include="Images\FizzBuzz800x600.jpg" />
-    <Content Include="Images\intro-bg.jpg" />
     <Content Include="Images\NumbersChallenge800x600.jpg" />
     <Content Include="Images\Palindrome800x600.jpg" />
     <Content Include="Images\preloader.gif" />

@@ -351,7 +351,7 @@ img {
 * -------------------------------------------------------------------------------------- */
 
 .slider-area {
-    background-image: url(../Images/intro-bg.jpg);
+    background-image: url(../Images/BackgroundImage2000x1000.jpg);
     background-size: cover;
     background-position: center;
     position: relative;
@@ -677,6 +677,7 @@ section {
     position: relative;
     overflow: hidden;
     margin-top: 30px;
+    cursor: pointer;
 }
 
 .work-items .item img {
@@ -977,4 +978,7 @@ section {
     width: 100%;
 }
 
+.half-black {
+    background: rgba(255, 255, 255, .5);
+}
 
