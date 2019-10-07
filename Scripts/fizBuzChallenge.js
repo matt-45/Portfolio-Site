@@ -6,8 +6,6 @@
 
     let codeContainer = $("#codeFizChallenge")
 
-    let modal = $("#fizModalDialog")
-
     $("#showFizModal").click(function () {
         $("#fizModal").modal();
     });
