@@ -112,6 +112,7 @@
     <Content Include="Scripts\mailer.php" />
     <Content Include="Scripts\main_script.js" />
     <Content Include="Scripts\owl.carousel.min.js" />
+    <Content Include="Scripts\sumOfAllFearsChallenge.js" />
     <Content Include="Scripts\palindromeChallenge.js" />
     <Content Include="Scripts\typed.js" />
     <Content Include="Scripts\wow.min.js" />

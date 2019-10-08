@@ -282,6 +282,17 @@
                         </div>
                     </div>
 
+                    <!-- Sum of All Fears Challenge -->
+                    <div class="col-md-4 col-sm-6 mix app web">
+                        <div id="showFearModal" class="item" style="cursor: pointer">
+                            <img src="Images/Palindrome800x600.jpg">
+                            <div class="overlay">
+                                <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                            </div>
+                            <div class="title">Sum of All Fear Challenge</div>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
@@ -717,7 +728,77 @@ function generatePalindrome() {
         </div>
     </div>
     <!-- Palindrome Challenge Modal Ends -->
-    <!-- Testimonial Area was here. -->
+    <!-- Palindrome Challenge Modal Starts-->
+    <div id="fearModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-md" id="fearModalDialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h1 class="modal-title">Sum of All Fears Challenge</h1>
+                    <h5 class="modal-title">This program takes in a number and checks what number add to the same value.</h5>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 style="text-align: center">Enter a Number</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <input type="text" id="fearNumInput" class="numberInput100" />
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 style="text-align: center">Numbers</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <input type="text" id="fearArrayInput" class="numberInput100" value="2, 1, 5, 6, 2, 3" />
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h5 style="text-align: center">How many numbers can be used?</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" >
+                            <input type="number" id="fearAmountInput" class="numberInput10" value="4" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" style="text-align: center">
+                            <h5 id="fearErrorHeader" style="text-align: center"></h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid" id="codeFearChallenge" style="display: none">
+                    <pre class="prettyprint">
+function generatePalindrome() {
+                    </pre>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white pull-left" id="toggleFearCode" style="">Show Code</button>
+                    <button type="button" class="btn btn-white" id="clearForFearChallenge">Clear</button>
+                    <button type="button" class="btn btn-white" id="generateFear">Generate</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Palindrome Challenge Modal Ends -->
     <!-- Contact area starts -->
     <section id="contact" class="contact-area section-big">
         <div class="container">
@@ -830,8 +911,11 @@ function generatePalindrome() {
     <!-- Fiz Buz Challenge Modal -->
     <script src="Scripts/fizBuzChallenge.js"></script>
 
-    <!-- Fiz Buz Challenge Modal -->
+    <!-- Palindrome Challenge Modal -->
     <script src="Scripts/palindromeChallenge.js"></script>
+
+    <!-- Sum of All Fears Challenge Modal -->
+    <script src="Scripts/sumOfAllFearsChallenge.js"></script>
 
     <!-- Sweet Alert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>

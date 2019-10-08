@@ -4,12 +4,35 @@
 * --------------------------------------------------------------------------------------- */
 
 .numberInput75 {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
     text-align: center;
     width: 75%;
 }
+
 .numberInput100 {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
     text-align: center;
     width: 100%;
+}
+
+.numberInput10 {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    text-align: center;
+    width: 10%;
+}
+
+.numberInput15 {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    text-align: center;
+    width: 15%;
 }
 
 .fizz {
@@ -25,5 +48,10 @@
 .fizzBuzz {
     font-weight: bold;
     color: darkgreen;
+}
+
+.centerItems {
+    align-items: center;
+    justify-content: center;
 }
 
