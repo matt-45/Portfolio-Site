@@ -29,6 +29,7 @@
     let tempArray = fearNumbers.split(",")
     let twoDArray = []
     let array = []
+    let successfulCombos = []
 
     function findNumbers() {
         enteredNum = $("#fearNumInput").val() // error check for letters
@@ -50,27 +51,31 @@
             if (twoDArray[array.length - 1] != array) {
                 move0toBack(array)
             }
-            console.log(twoDArray[i])
         }
         let value = 0
         let combo = []
         for (var i = 0; i < twoDArray.length; i++) {
             for (var x = 0; x < twoDArray[i].length; x++) {
                 value += twoDArray[i][x] // left off at adding combos
+                combo.push(twoDArray[i][x])
                 if (twoDArray[i][x] == enteredNum) {
                     console.log("This single number equlas the entered value")
-                    // add this as a combo
-                    
-                }
-                if (value == enteredNum) {
+                    successfulCombos.push(combo)
+                    combo = []
+                } else if (value == enteredNum) {
                     console.log("The value is equal to the entered number.")
-                    // add this as a combo
-                    
-                }
-                if (value > enteredNum) {
+                    successfulCombos.push(combo)
+                    combo = []
+                } else if (value > enteredNum) {
                     value -= twoDArray[i][x]
+                    combo.pop()
+                } else {
+                    console.log("this array does not have a successful combo")
                 }
             }
+        }
+        for (var i = 0; i < successfulCombos.length; i++) {
+            console.log(successfulCombos[i])
         }
         
     }
