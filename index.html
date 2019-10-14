@@ -624,9 +624,9 @@ function generateString() {
                 if (i % num1 == 0 && i % num2 == 0) {
                     fizBox.append("<span class='fizzBuzz'>FIZZ BUZZ </span>")
                 } else if (i % num1 == 0) {
-                    fizBox.append("<span class='fizz'>Fiz </span>")
+                    fizBox.append("<span class='fizz'>Fizz </span>")
                 } else if (i % num2 == 0) {
-                    fizBox.append("<span class='buzz'>Buz </span>")
+                    fizBox.append("<span class='buzz'>Buzz </span>")
                 } else {
                     fizBox.append(i + " ")
                 }
@@ -693,16 +693,17 @@ function generatePalindrome() {
         if (enteredWord != "") {
             var pat = /[0-9 a-z]/g;
             enteredWord = enteredWord.match(pat).join("");
-            
             if (enteredWord.length >= 3) {
                 let reversedWord = enteredWord.split("").reverse().join("")
-                console.log(enteredWord)
-                console.log(reversedWord)
+                // Reverse Using For Loop //
+                /*for (var i = enteredWord.length - 1; i >= 0; i--) {
+                    reversedWord += enteredWord[i]
+                }*/
                 if (enteredWord == reversedWord) {
-                    palAnswerHeader.text(`${$("#palInput").val()} is a palindrome.`)
+                    palAnswerHeader.text(`"${$("#palInput").val()}" is a palindrome.`)
                 } else {
                     enteredWord = enteredWord.charAt(0).toUpperCase() + enteredWord.slice(1)
-                    palAnswerHeader.text(`${$("#palInput").val()} is not a plaindrome.`)
+                    palAnswerHeader.text(`"${$("#palInput").val()}" is not a plaindrome.`)
                 }
                 errorLabel.text("")
             } else {
@@ -728,7 +729,7 @@ function generatePalindrome() {
         </div>
     </div>
     <!-- Palindrome Challenge Modal Ends -->
-    <!-- Palindrome Challenge Modal Starts-->
+    <!-- Sum of All Fears Challenge Modal Starts-->
     <div id="fearModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-md" id="fearModalDialog">
 
@@ -737,7 +738,7 @@ function generatePalindrome() {
 
                 <div class="modal-header">
                     <h1 class="modal-title">Sum of All Fears Challenge</h1>
-                    <h5 class="modal-title">This program takes in a number and checks what number add to the same value.</h5>
+                    <h5 class="modal-title">This program takes in a number and checks what numbers add to the entered value.</h5>
                 </div>
 
                 <div class="modal-body">
@@ -785,6 +786,30 @@ function generatePalindrome() {
                 <div class="container-fluid" id="codeFearChallenge" style="display: none">
                     <pre class="prettyprint">
 function generatePalindrome() {
+        let enteredWord = $("#palInput").val().toLowerCase()
+        enteredWord = enteredWord.replace(/\s/g, "");
+        if (enteredWord != "") {
+            var pat = /[0-9 a-z]/g;
+            enteredWord = enteredWord.match(pat).join("");
+            
+            if (enteredWord.length >= 3) {
+                let reversedWord = enteredWord.split("").reverse().join("")
+                if (enteredWord == reversedWord) {
+                    palAnswerHeader.text(`"${$("#palInput").val()}" is a palindrome.`)
+                } else {
+                    enteredWord = enteredWord.charAt(0).toUpperCase() + enteredWord.slice(1)
+                    palAnswerHeader.text(`"${$("#palInput").val()}" is not a plaindrome.`)
+                }
+                errorLabel.text("")
+            } else {
+                palAnswerHeader.text("")
+                errorLabel.text("Please enter at least three letters.")
+            }
+        } else {
+            palAnswerHeader.text("")
+            errorLabel.text("Please enter a word.")
+        }
+    }
                     </pre>
                 </div>
 
@@ -798,7 +823,7 @@ function generatePalindrome() {
 
         </div>
     </div>
-    <!-- Palindrome Challenge Modal Ends -->
+    <!-- Sum of All Fears Challenge Modal Ends -->
     <!-- Contact area starts -->
     <section id="contact" class="contact-area section-big">
         <div class="container">

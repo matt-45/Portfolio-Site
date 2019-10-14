@@ -44,9 +44,9 @@
                 if (i % num1 == 0 && i % num2 == 0) {
                     fizBox.append("<span class='fizzBuzz'>FIZZ BUZZ </span>")
                 } else if (i % num1 == 0) {
-                    fizBox.append("<span class='fizz'>Fiz </span>")
+                    fizBox.append("<span class='fizz'>Fizz </span>")
                 } else if (i % num2 == 0) {
-                    fizBox.append("<span class='buzz'>Buz </span>")
+                    fizBox.append("<span class='buzz'>Buzz </span>")
                 } else {
                     fizBox.append(i + " ")
                 }

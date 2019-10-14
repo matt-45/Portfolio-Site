@@ -1,11 +1,5 @@
 ﻿$(document).ready(function () {
 
-    
-
-    //let enteredNum = $("#fearNumInput")
-
-
-
     let errorLabel = $("#fearErrorHeader")
 
     let codeContainer = $("#codeFearChallenge")
@@ -38,53 +32,48 @@
         fearNumbers = fearNumbers.replace(/\s/g, "");
         tempArray = fearNumbers.split(",")
 
-        for (var i = 0; i < tempArray.length; i++) {
+        for (var i = 0; i < tempArray.length; i++) { // pull numbers out of array
             array.push(parseInt(tempArray[i]))
         }
-        //let index = 0
-        //let num = 0
-        //let hasLooped = false
-        //let successfulCombo = []
-        
 
-        for (i = 0; i < array.length; i++) {
+        for (i = 0; i < array.length; i++) { // creates 2d array
+            
             if (twoDArray[array.length - 1] != array) {
                 move0toBack(array)
+                console.log(array)
             }
         }
+        
+        console.log(twoDArray)
+
         let value = 0
-        let combo = []
         for (var i = 0; i < twoDArray.length; i++) {
             for (var x = 0; x < twoDArray[i].length; x++) {
-                value += twoDArray[i][x] // left off at adding combos
-                combo.push(twoDArray[i][x])
+                value += twoDArray[i][x]
+                
                 if (twoDArray[i][x] == enteredNum) {
                     console.log("This single number equlas the entered value")
-                    successfulCombos.push(combo)
-                    combo = []
+
                 } else if (value == enteredNum) {
                     console.log("The value is equal to the entered number.")
-                    successfulCombos.push(combo)
-                    combo = []
+
                 } else if (value > enteredNum) {
                     value -= twoDArray[i][x]
-                    combo.pop()
+                    console.log("Value is too large")
+
                 } else {
                     console.log("this array does not have a successful combo")
                 }
             }
-        }
-        for (var i = 0; i < successfulCombos.length; i++) {
-            console.log(successfulCombos[i])
-        }
-        
+        }    
     }
 
     function move0toBack(x) {
-        let firstItem = x[0]
-        x.push(firstItem)
-        x.shift()
-        twoDArray.push(x)
+        let newArray = x
+        let firstItem = newArray[0]
+        newArray.push(firstItem)
+        newArray.shift()
+        twoDArray.push([newArray])
     }
 
     function clearAll() {

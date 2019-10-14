@@ -24,11 +24,12 @@
         if (enteredWord != "") {
             var pat = /[0-9 a-z]/g;
             enteredWord = enteredWord.match(pat).join("");
-            
             if (enteredWord.length >= 3) {
                 let reversedWord = enteredWord.split("").reverse().join("")
-                console.log(enteredWord)
-                console.log(reversedWord)
+                // Reverse Using For Loop //
+                /*for (var i = enteredWord.length - 1; i >= 0; i--) {
+                    reversedWord += enteredWord[i]
+                }*/
                 if (enteredWord == reversedWord) {
                     palAnswerHeader.text(`"${$("#palInput").val()}" is a palindrome.`)
                 } else {
