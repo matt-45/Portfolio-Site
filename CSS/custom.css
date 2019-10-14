@@ -63,3 +63,17 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale
 }
+
+.work-items .overlayCustom {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    text-align: center;
+    opacity: 0;
+    transition: 0.3s cubic-bezier(0.4, 0, 1, 1);
+    -ms-transition: 0.3s cubic-bezier(0.4, 0, 1, 1);
+    -moz-transition: 0.3s cubic-bezier(0.4, 0, 1, 1);
+    -webkit-transition: 0.3s cubic-bezier(0.4, 0, 1, 1);
+}
