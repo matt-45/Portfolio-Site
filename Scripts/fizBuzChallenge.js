@@ -24,12 +24,17 @@
 
         for (var i = 0; i < numbers.length; i++) {
             if (numbers[i] != "") {
-                if (numbers[i] == parseInt(numbers[i]).toString()) {
-                    numbers[i] = parseInt(numbers[i])
-                    errorHeader.text("")
+                if (numbers[i] == Math.abs(numbers[i])) {
+                    if (numbers[i] == Math.round(numbers[i])) {
+                        errorHeader.text("")
+                    } else {
+                        clearAnswers()
+                        errorHeader.text("Please only enter whole numbers.")
+                        break
+                    }
                 } else {
                     clearAnswers()
-                    errorHeader.text("Please only enter whole numbers.")
+                    errorHeader.text("Please only enter positive numbers.")
                     break
                 }
             } else {
@@ -41,11 +46,13 @@
 
         if (errorHeader.text() == "") {
             for (var i = 1; i <= 100; i++) {
-                if (i % num1 == 0 && i % num2 == 0) {
+                var val1 = i % num1
+                var val2 = i % num2
+                if (val1 == 0 && val2 == 0) {
                     fizBox.append("<span class='fizzBuzz'>FIZZ BUZZ </span>")
-                } else if (i % num1 == 0) {
+                } else if (val1 == 0) {
                     fizBox.append("<span class='fizz'>Fizz </span>")
-                } else if (i % num2 == 0) {
+                } else if (val2 == 0) {
                     fizBox.append("<span class='buzz'>Buzz </span>")
                 } else {
                     fizBox.append(i + " ")
