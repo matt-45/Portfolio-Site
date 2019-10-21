@@ -95,6 +95,7 @@
     <Content Include="Images\FizzBuzz800x600.jpg" />
     <Content Include="Images\NumbersChallenge800x600.jpg" />
     <Content Include="Images\Palindrome800x600.jpg" />
+    <Content Include="Images\PortfolioImage.jpg" />
     <Content Include="Images\preloader.gif" />
     <Content Include="index.html">
       <BrowseToURL>~/index.html</BrowseToURL>

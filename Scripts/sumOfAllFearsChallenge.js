@@ -37,10 +37,12 @@
         }
 
         for (i = 0; i < array.length; i++) { // creates 2d array
-            
+            let newShiftedArray = returnNewArray()
+            twoDArray.push(newShiftedArray)
+
+            console.log(newShiftedArray)
             if (twoDArray[array.length - 1] != array) {
-                move0toBack(array)
-                console.log(array)
+                
             }
         }
         
@@ -68,12 +70,10 @@
         }    
     }
 
-    function move0toBack(x) {
-        let newArray = x
-        let firstItem = newArray[0]
-        newArray.push(firstItem)
-        newArray.shift()
-        twoDArray.push([newArray])
+    function returnNewArray() {
+        var firstItem = array.shift()
+        array.push(firstItem)
+        return array
     }
 
     function clearAll() {

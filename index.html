@@ -9,6 +9,7 @@
     <meta name="description" content="Matthew Park's Portfolio">
     <meta name="keywords" content="onepage, personal, portfolio, html5, template, responsive, creative">
     <meta name="author" content="web_bean">
+    
 
     <!-- Site title -->
     <title>Matt's Portfolio</title>
@@ -142,7 +143,7 @@
                 <!-- About Image -->
                 <div class="col-md-6">
                     <div class="me-image">
-                        <img src="Images/about.jpg" alt="">
+                        <img src="Images/PortfolioImage.jpg" alt="">
                     </div>
                 </div>
 
@@ -179,13 +180,15 @@
 
                     <!-- work item -->
                     <div class="col-md-4 col-sm-6 mix web">
-                        <div id="" class="item">
-                            <img src="Images/Blog800x600.jpg">
-                            <div class="overlay">
-                                <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                        <a href="https://matthewparkblog.azurewebsites.net/">
+                            <div id="" class="item">
+                                <img src="Images/Blog800x600.jpg">
+                                <div class="overlay">
+                                    <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                                </div>
+                                <div class="title">Blog</div>
                             </div>
-                            <div class="title">Blog</div>
-                        </div>
+                        </a>
                     </div>
 
                     <!-- work item -->
@@ -639,12 +642,17 @@ function generateString() {
 
         for (var i = 0; i < numbers.length; i++) {
             if (numbers[i] != "") {
-                if (numbers[i] == parseInt(numbers[i]).toString()) {
-                    numbers[i] = parseInt(numbers[i])
-                    errorHeader.text("")
+                if (numbers[i] == Math.abs(numbers[i])) {
+                    if (numbers[i] == Math.round(numbers[i])) {
+                        errorHeader.text("")
+                    } else {
+                        clearAnswers()
+                        errorHeader.text("Please only enter whole numbers.")
+                        break
+                    }
                 } else {
                     clearAnswers()
-                    errorHeader.text("Please only enter whole numbers.")
+                    errorHeader.text("Please only enter positive numbers.")
                     break
                 }
             } else {
@@ -656,11 +664,13 @@ function generateString() {
 
         if (errorHeader.text() == "") {
             for (var i = 1; i <= 100; i++) {
-                if (i % num1 == 0 && i % num2 == 0) {
+                var val1 = i % num1
+                var val2 = i % num2
+                if (val1 == 0 && val2 == 0) {
                     fizBox.append("<span class='fizzBuzz'>FIZZ BUZZ </span>")
-                } else if (i % num1 == 0) {
+                } else if (val1 == 0) {
                     fizBox.append("<span class='fizz'>Fizz </span>")
-                } else if (i % num2 == 0) {
+                } else if (val2 == 0) {
                     fizBox.append("<span class='buzz'>Buzz </span>")
                 } else {
                     fizBox.append(i + " ")
