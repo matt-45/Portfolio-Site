@@ -1,0 +1,57 @@
+<div id="uploadAttachmentModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+<div class="modal-content">
+    <div class="modal-header">
+        <h2 class="modal-title" style="font-weight: bold">Upload a File</h2>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </div>
+    <div class="modal-body">
+        <div class="row" style="text-align: center">
+            <div class="col">
+                <h4 id="" style="text-align: center; font-weight: bold">Description</h4>
+            </div>
+        </div>
+        <div class="row" style="text-align: center">
+            <div class="col">
+                <input type="text" style="width: 50%; text-align: center" />
+            </div>
+
+        </div>
+        <div class="row" style="padding-top: 5%; text-align: center">
+            <div class="col" style="display:inline-block">
+                <input hidden type="file" name="" id="fileInput" />
+                <a href="#" id="showFileInput">
+                    <div class="small-box bg-blue" style="width: 75%;text-align: center; display:inline-block">
+                        <i class="fas fa-arrow-circle-up fa-3x" style="text-align: center; padding-top: 5%"></i>
+                        <h1 style="text-align: center; padding-bottom: 5%; font-weight: bold">Select File</h1>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+<a data-toggle="modal" data-target="#uploadAttachmentModal" href="#" style="color: black">
+                        <div style="padding-top: 3%">
+                            <div class="info-box mb-3 bg-yellow">
+                                <span class="info-box-icon bg-white elevation-1"><i class="fas fa-arrow-circle-up" style="color: #ffc107"></i></span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text" style="font-size: large; font-weight: bold">Upload Attachments</span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                        </div>
+                    </a>

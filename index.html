@@ -191,6 +191,21 @@
                         </a>
                     </div>
 
+
+
+                    <!-- work item -->
+                    <div class="col-md-4 col-sm-6 mix web">
+                        <a href="https://matthewparkbugtracker.azurewebsites.net/">
+                            <div id="" class="item">
+                                <img src="Images/BugTracker800x600.jpg">
+                                <div class="overlay">
+                                    <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                                </div>
+                                <div class="title">Bug Tracker</div>
+                            </div>
+                        </a>
+                    </div>
+
                     <!-- work item -->
                     <div class="col-md-4 col-sm-6 mix web">
                         <div id="" class="item">
@@ -198,19 +213,20 @@
                             <div class="overlay">
                                 <i class="fa fa-arrows-alt" aria-hidden="true"></i>
                             </div>
-                            <div class="title">Financial Portal</div>
+                            <div class="title">Financial Portal (Comming Soon)</div>
                         </div>
                     </div>
 
-                    <!-- work item -->
                     <div class="col-md-4 col-sm-6 mix web">
-                        <div id="" class="item">
-                            <img src="Images/BugTracker800x600.jpg">
-                            <div class="overlay">
-                                <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                        <a href="https://apps.apple.com/us/app/tippr-tip-calculator/id1468993634">
+                            <div id="" class="item">
+                                <img src="Images/Tippr800x600.jpg">
+                                <div class="overlay">
+                                    <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                                </div>
+                                <div class="title">Tippr</div>
                             </div>
-                            <div class="title">Bug Tracker</div>
-                        </div>
+                        </a>
                     </div>
 
                 </div>
@@ -242,7 +258,7 @@
                 <div class="row work-items">
 
                     <!-- Sum of All Fears Challenge -->
-                    <div class="col-md-4 col-sm-6 mix app web">
+                    <!--<div class="col-md-4 col-sm-6 mix app web">
                         <div id="showFearModal" class="item" style="cursor: pointer">
                             <img src="Images/Palindrome800x600.jpg">
                             <div class="overlay">
@@ -257,7 +273,7 @@
                             </div>
                             <div class="title">Sum of All Fears Challenge</div>
                         </div>
-                    </div>
+                    </div>-->
 
                     <!-- Palindrome Challenge -->
                     <div class="col-md-4 col-sm-6 mix app web">
@@ -635,7 +651,7 @@ function generateNumbers() {
                 <div class="container-fluid" id="codeFizChallenge" style="display: none">
                     <pre class="prettyprint">
 function generateString() {
-        fizBox.text("")
+        fizzBox.text("")
         let num1 = $("#num1FizInput").val()
         let num2 = $("#num2FizInput").val()
         let numbers = [num1, num2]
@@ -667,13 +683,13 @@ function generateString() {
                 var val1 = i % num1
                 var val2 = i % num2
                 if (val1 == 0 && val2 == 0) {
-                    fizBox.append("<span class='fizzBuzz'>FIZZ BUZZ </span>")
+                    fizzBox.append("<span class='fizzBuzz'>FIZZ BUZZ </span>")
                 } else if (val1 == 0) {
-                    fizBox.append("<span class='fizz'>Fizz </span>")
+                    fizzBox.append("<span class='fizz'>Fizz </span>")
                 } else if (val2 == 0) {
-                    fizBox.append("<span class='buzz'>Buzz </span>")
+                    fizzBox.append("<span class='buzz'>Buzz </span>")
                 } else {
-                    fizBox.append(i + " ")
+                    fizzBox.append(i + " ")
                 }
             }
         }
@@ -870,14 +886,14 @@ function generatePalindrome() {
     </div>
     <!-- Sum of All Fears Challenge Modal Ends -->
     <!-- Contact area starts -->
-    <section id="contact" class="contact-area section-big">
+    <!--<section id="contact" class="contact-area section-big">
         <div class="container">
 
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="section-title">
                         <h2><span>Contact</span> Me</h2>
-                        <p></p><!--This is the subtitle-->
+                        <p></p>This is the subtitle
                     </div>
                 </div>
             </div>
@@ -886,7 +902,7 @@ function generatePalindrome() {
 
                 <div class="col-md-12">
 
-                    <!-- Contact form starts -->
+                     Contact form starts 
                     <div class="contact-form">
 
                         <form id="ajax-contact" action="Scripts/mailer.php" method="post">
@@ -904,17 +920,17 @@ function generatePalindrome() {
                             </div>
                         </form>
 
-                        <!-- Submition status -->
+                         Submition status 
                         <div id="form-messages"></div>
 
                     </div>
-                    <!-- Contact form ends-->
+                     Contact form ends
                 </div>
 
             </div>
 
         </div>
-    </section>
+    </section>-->
     <!-- Contact area ends -->
     <!-- Footer area starts -->
     <footer class="footer-area">
