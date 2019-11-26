@@ -87,7 +87,7 @@
                                         <li><a class="smooth_scroll" href="#work">Work</a></li>
                                         <li><a class="smooth_scroll" href="#challenges">Coding Challenges</a></li>
                                         <!--<li><a class="smooth_scroll" href="#testimonial">Testimonial</a></li>-->
-                                        <li><a class="smooth_scroll" href="#contact">Contact</a></li>
+                                        <!--<li><a class="smooth_scroll" href="#contact">Contact</a></li>-->
                                     </ul>
                                 </nav>
                             </div>
@@ -151,7 +151,7 @@
                 <div class="col-md-6">
                     <div class="about-me">
                         <h3><span>A Quick</span> Bio</h3>
-                        <p>I'm a full-stack .NET developer. I graduated from Coder Foundry in December 2019 where I learned the .NET stack, Xamarin, Bootstrap, SQL, HTML, and more. Below you'll find some of my projects and coding challenges I've completed. If you have any questions contact me below.</p>
+                        <p>I'm a full-stack .NET developer. I graduated from Coder Foundry in December 2019 where I learned the .NET stack, Xamarin, Bootstrap, SQL, HTML, and more. I have a growing intrest in crossplatform app development with Xamarin. Below you'll find some of my projects and coding challenges I've completed.</p>
                         <a class="btn dark smooth_scroll" href="#contact">Contact Me</a>
 
                     </div>
@@ -905,7 +905,7 @@ function generatePalindrome() {
                      Contact form starts 
                     <div class="contact-form">
 
-                        <form id="ajax-contact" action="Scripts/mailer.php" method="post">
+                        
                             <div class="form-group in_name">
                                 <input type="text" name="name" class="form-control" id="name" placeholder="Name" required="required">
                             </div>
@@ -916,9 +916,9 @@ function generatePalindrome() {
                                 <textarea rows="5" name="message" class="form-control" id="message" placeholder="Message" required="required"></textarea>
                             </div>
                             <div class="actions">
-                                <input type="submit" value="Send Message" name="submit" id="submitButton" class="btn" title="Submit Your Message!">
+                                <input type="submit" value="Send Message" name="submit" id="submitButton" class="btn" title="Submit Your Message!" onclick="">
                             </div>
-                        </form>
+                        
 
                          Submition status 
                         <div id="form-messages"></div>
@@ -1011,5 +1011,8 @@ function generatePalindrome() {
 
     <!-- Main js -->
     <script src="Scripts/main_script.js"></script>
+    <script src="Scripts/smtp.js"></script>
+    <script src="Scripts/sendEmail.js"></script>
+
 </body>
 </html>

@@ -105,6 +105,7 @@
     <Content Include="Scripts\challengeMethods.js" />
     <Content Include="Scripts\factorialChallenge.js" />
     <Content Include="Scripts\fizBuzChallenge.js" />
+    <Content Include="Scripts\sendEmail.js" />
     <Content Include="Scripts\numberChallenge.js" />
     <Content Include="Scripts\jquery.ajaxchimp.min.js" />
     <Content Include="Scripts\jquery.magnific-popup.min.js" />
@@ -114,6 +115,7 @@
     <Content Include="Scripts\mailer.php" />
     <Content Include="Scripts\main_script.js" />
     <Content Include="Scripts\owl.carousel.min.js" />
+    <Content Include="Scripts\smtp.js" />
     <Content Include="Scripts\sumOfAllFearsChallenge.js" />
     <Content Include="Scripts\palindromeChallenge.js" />
     <Content Include="Scripts\typed.js" />
