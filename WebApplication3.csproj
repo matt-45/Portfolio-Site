@@ -98,6 +98,7 @@
     <Content Include="Images\PortfolioImage.jpg" />
     <Content Include="Images\preloader.gif" />
     <Content Include="Images\Tippr800x600.jpg" />
+    <Content Include="Images\WebAPI800x600.jpg" />
     <Content Include="index.html">
       <BrowseToURL>~/index.html</BrowseToURL>
     </Content>
